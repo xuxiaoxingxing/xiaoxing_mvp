@@ -1,5 +1,7 @@
 package com.xiaoxing.mvp.ui.login.presenter;
 
+import android.text.TextUtils;
+
 import com.xiaoxing.mvp.R;
 import com.xiaoxing.mvp.ui.login.bean.Login;
 import com.xiaoxing.mvp.ui.login.contract.LoginContract;
@@ -24,11 +26,21 @@ public class LoginPresenter extends LoginContract.LoginPresenter {
 
     @Override
     public void doLogin(String username, String pwd) {
-//        mRxManager.add(mModel.login(username, pwd).subscribe(data -> mView.loginSuccess(data), e -> mView.showError("数据加载失败ヽ(≧Д≦)ノ")));
+        if (TextUtils.isEmpty(username)) {
+            mView.accountIsNull();
+            return;
+        }
+        if (TextUtils.isEmpty(pwd)) {
+            mView.passwordIsNull();
+            return;
+        }
+
+        //mRxManager.add(mModel.login(username, pwd).subscribe(data -> mView.loginSuccess(data), e -> mView.showError("数据加载失败ヽ(≧Д≦)ノ")));
         mRxManager.add(mModel.login(username, pwd).subscribe(new CoreLoadingSubscriber<Login>(mContext, mActivity.getFragmentManager(), R.raw.loading) {
             @Override
             public void _onNext(Login entity) {
-                mView.loginSuccess(entity);
+                mModel.saveLoginData(mContext, entity);
+                mView.loginSuccess();
             }
         }));
     }

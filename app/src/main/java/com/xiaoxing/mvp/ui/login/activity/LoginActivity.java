@@ -6,7 +6,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.xiaoxing.mvp.R;
-import com.xiaoxing.mvp.ui.login.bean.Login;
 import com.xiaoxing.mvp.ui.login.contract.LoginContract;
 import com.xiaoxing.mvp.ui.login.model.LoginModel;
 import com.xiaoxing.mvp.ui.login.presenter.LoginPresenter;
@@ -59,17 +58,22 @@ public class LoginActivity extends CoreBaseActivity<LoginPresenter, LoginModel> 
 
     @OnClick(R.id.btn_login)
     public void onViewClicked() {
-//        ToastUtils.showToast(this, "登录中...");
         mPresenter.doLogin("123", "111111");
     }
 
     @Override
-    public void loginSuccess(Login login) {
-        ToastUtils.showToast(this, login.getData().getPassword() + "dengluchenggong");
+    public void accountIsNull() {
+        ToastUtils.showToast(this, "账号不能为空");
     }
 
     @Override
-    public void loginSuccess(String login) {
-        ToastUtils.showToast(this, login);
+    public void passwordIsNull() {
+        ToastUtils.showToast(this, "密码不能为空");
+    }
+
+
+    @Override
+    public void loginSuccess() {
+        ToastUtils.showToast(this, "登录成功");
     }
 }

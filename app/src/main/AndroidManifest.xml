@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.xiaoxing.mvp">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -31,9 +32,11 @@
         </activity>
 
         <meta-data
+            tools:replace="android:value"
             android:name="UMENG_APPKEY"
             android:value="59881d5d4ad15615220000a8" />
         <meta-data
+            tools:replace="android:value"
             android:name="UMENG_CHANNEL"
             android:value="Mvp" />
     </application>

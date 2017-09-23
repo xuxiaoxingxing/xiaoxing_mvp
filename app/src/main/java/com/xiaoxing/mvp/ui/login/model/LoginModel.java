@@ -1,5 +1,7 @@
 package com.xiaoxing.mvp.ui.login.model;
 
+import android.content.Context;
+
 import com.xiaoxing.mvp.api.LoginApi;
 import com.xiaoxing.mvp.ui.login.bean.Login;
 import com.xiaoxing.mvp.ui.login.contract.LoginContract;
@@ -28,4 +30,9 @@ public class LoginModel implements LoginContract.LoginModel {
                 login(username, pwd).
                 compose(RxUtil.rxSchedulerHelper());
     }
+
+    @Override
+    public void saveLoginData(Context context, Login login) {
+    }
+
 }

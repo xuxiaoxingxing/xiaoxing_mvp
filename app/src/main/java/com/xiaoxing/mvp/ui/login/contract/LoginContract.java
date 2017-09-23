@@ -1,5 +1,7 @@
 package com.xiaoxing.mvp.ui.login.contract;
 
+import android.content.Context;
+
 import com.xiaoxing.mvp.ui.login.bean.Login;
 import com.xiaoxing.mvp_core.base.CoreBaseModel;
 import com.xiaoxing.mvp_core.base.CoreBasePresenter;
@@ -22,11 +24,16 @@ public interface LoginContract {
 
     interface LoginModel extends CoreBaseModel {
         Observable<Login> login(String username, String pwd);
+
+        void saveLoginData(Context context, Login login);
     }
 
     interface LoginView extends CoreBaseView {
-        void loginSuccess(Login login);
-        void loginSuccess(String login);
+        void accountIsNull();
+
+        void passwordIsNull();
+
+        void loginSuccess();
     }
 
     abstract class LoginPresenter extends CoreBasePresenter<LoginContract.LoginModel, LoginContract.LoginView> {
