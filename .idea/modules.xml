@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Xiaoxing_Mvp.iml" filepath="$PROJECT_DIR$/Xiaoxing_Mvp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xiaoxing_mvp_core/xiaoxing_mvp_core.iml" filepath="$PROJECT_DIR$/xiaoxing_mvp_core/xiaoxing_mvp_core.iml" />
+    </modules>
+  </component>
+</project>
