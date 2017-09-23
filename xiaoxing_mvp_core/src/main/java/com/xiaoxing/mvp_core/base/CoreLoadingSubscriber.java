@@ -5,7 +5,6 @@ import android.content.Context;
 import android.support.annotation.CallSuper;
 
 import com.xiaoxing.gifloadingview.LoadingDialogUtil;
-import com.xiaoxing.mvp_core.utils.ToastUtils;
 
 /**
  * @name Xiaoxing_Mvp
@@ -17,11 +16,8 @@ import com.xiaoxing.mvp_core.utils.ToastUtils;
  * @chang time
  * @class describe
  */
-public abstract class CoreLoadingSubscriber<T> extends CoreBaseSubscriber<T> {
+public abstract class CoreLoadingSubscriber<T> extends CoreNetCheckerSubscriber<T> {
 
-    public CoreLoadingSubscriber(Context context) {
-        super(context);
-    }
 
     public CoreLoadingSubscriber(Context context, FragmentManager fragmentManager, int resLoading) {
         super(context, fragmentManager, resLoading);
