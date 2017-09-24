@@ -1,65 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="@dimen/padding_20">
+    android:fitsSystemWindows="true">
 
-    <ImageView
-        android:layout_width="@dimen/width_70"
-        android:layout_height="@dimen/height_70"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/margin_24"
-        android:layout_marginTop="@dimen/margin_24"
-        android:src="@mipmap/ic_launcher" />
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@android:color/white"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@android:color/white"
+            app:tabTextColor="@android:color/white" />
+
+    </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:layout_marginTop="@dimen/margin_10"
             android:background="@color/white"
             android:orientation="vertical">
 
 
-            <EditText
+            <com.xiaoxing.validation.EditText
                 android:id="@+id/ced_tel"
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/height_55"
-                android:layout_weight="1.0"
                 android:background="@null"
-                android:hint="username"
                 android:cursorVisible="true"
                 android:drawablePadding="@dimen/padding_10"
+                android:hint="username"
                 android:imeOptions="actionNext"
                 android:paddingLeft="@dimen/padding_20"
                 android:paddingRight="@dimen/padding_10"
                 android:textColor="@android:color/black"
-                android:textCursorDrawable="@null"
-                android:textSize="@dimen/text_size_14" />
+                android:textCursorDrawable="@null" />
 
 
-            <EditText
+            <com.xiaoxing.validation.EditText
                 android:id="@+id/cet_pwd"
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/height_55"
+                android:layout_marginTop="@dimen/margin_10"
                 android:background="@null"
                 android:cursorVisible="true"
-                android:hint="pwd"
                 android:drawablePadding="@dimen/padding_10"
+                android:hint="pwd"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:nextFocusDown="@+id/act_login_btn_login"
                 android:paddingLeft="@dimen/padding_20"
                 android:paddingRight="@dimen/padding_10"
                 android:textColor="@android:color/black"
-                android:textCursorDrawable="@null"
-                android:textSize="@dimen/text_size_14" />
+                android:textCursorDrawable="@null" />
 
         </LinearLayout>
 
@@ -77,6 +93,4 @@
 
 
     </LinearLayout>
-
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

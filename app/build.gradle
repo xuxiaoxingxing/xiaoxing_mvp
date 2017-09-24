@@ -56,7 +56,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
 
-    compile 'com.github.xuxiaoxingxing:validation:1.0.3'
+    compile 'com.github.xuxiaoxingxing:validation:1.0.4'
 }
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
