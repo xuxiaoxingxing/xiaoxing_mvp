@@ -2,4 +2,5 @@
     <string name="app_name">Xiaoxing_Mvp</string>
     <string name="zhang_hao_bu_neng_wei_kong">账号不能为空</string>
     <string name="mi_ma_bu_neng_wei_kong">密码不能为空</string>
+    <string name="entry">立即体验</string>
 </resources>
